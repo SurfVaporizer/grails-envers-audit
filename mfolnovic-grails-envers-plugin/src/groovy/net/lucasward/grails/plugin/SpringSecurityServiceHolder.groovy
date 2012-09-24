@@ -16,19 +16,12 @@
 
 package net.lucasward.grails.plugin
 
-/**
- * @author Lucas Ward
- */
-class StubSpringSecurityService {
+public class SpringSecurityServiceHolder {
 
-    def currentUser
+    public static def springSecurityService
 
-    User getCurrentUser() {
-        return currentUser
-    }
-
-    String encodePassword(String password, salt = null) {
-        return password
+    public setSpringSecurityService(def springSecurityService) {
+        this.springSecurityService = springSecurityService
     }
 
 }

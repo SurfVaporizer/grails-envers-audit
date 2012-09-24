@@ -7,7 +7,11 @@ class UrlMappings {
 			}
 		}
         "/auditCheck/index"(view: 'auditCheck/index')
-		"/"(view:"/index")
+
+        "/login/$action?"(controller: "login")
+        "/logout/$action?"(controller: "logout")
+
+        "/"(view:"/index")
 		"500"(view:'/error')
 	}
 }

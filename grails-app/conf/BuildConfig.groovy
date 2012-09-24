@@ -8,7 +8,7 @@ grails.project.source.level = 1.6
 
 // Useful for modular applications where all plugins and
 // applications are in the same directory.
-grails.plugin.location.'grails-envers-plugin' = "jayhogan-grails-envers-plugin"
+grails.plugin.location.'grails-envers-plugin' = "mfolnovic-grails-envers-plugin"
 
 grails.project.dependency.resolution = {
     // inherit Grails' default dependencies
@@ -54,7 +54,7 @@ grails.project.dependency.resolution = {
         build ":tomcat:$grailsVersion"
 
         runtime ":database-migration:1.1"
-
+        compile ":spring-security-core:1.2.7.1"
         //compile ':cache:1.0.0'
     }
 }

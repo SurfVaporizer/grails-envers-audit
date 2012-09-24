@@ -1,3 +1,5 @@
+import grails.plugins.springsecurity.SecurityConfigType
+
 // locations to search for config files that get merged into the main config;
 // config files can be ConfigSlurper scripts, Java properties files, or classes
 // in the classpath in ConfigSlurper format
@@ -90,3 +92,14 @@ log4j = {
            'org.hibernate',
            'net.sf.ehcache.hibernate'
 }
+
+// Added by the Spring Security Core plugin:
+grails.plugins.springsecurity.userLookup.userDomainClassName = 'grails.security.SecUser'
+grails.plugins.springsecurity.userLookup.authorityJoinClassName = 'grails.security.UserRole'
+grails.plugins.springsecurity.authority.className = 'grails.security.Role'
+
+grails.plugins.springsecurity.securityConfigType = SecurityConfigType.InterceptUrlMap
+grails.plugins.springsecurity.interceptUrlMap = [
+        '/item/list':         ['ROLE_ADMIN','ROLE_USER', 'IS_AUTHENTICATED_FULLY'],
+        '/**':               ['IS_AUTHENTICATED_ANONYMOUSLY']
+]
